@@ -1,0 +1,9 @@
+{
+  "programId": "11111111111111111111111111111112",
+  "authority": "2W8JsRFZoi9gAE4DdZ57yYSKTjw2iN5m1B3cXHMUhXkK",
+  "emergencyAlertPDA": "B2K7cR9Hrrmsmrityq7jKT1FVwP7m9p3APWC8g66Vc7Q",
+  "network": "devnet",
+  "rpcUrl": "https://api.devnet.solana.com",
+  "timestamp": "2025-09-02T04:57:53.309Z",
+  "note": "This is a placeholder deployment. Use Anchor CLI to deploy the actual program."
+}

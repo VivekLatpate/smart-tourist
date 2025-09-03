@@ -1,0 +1,75 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\vivek\\lastr\\contracts\\SimpleVendorRegistry.sol": {
+      "lastModificationDate": 1756873888116,
+      "contentHash": "5b75c3b0b279dc20d4bda188c9e3fbb8",
+      "sourceName": "contracts/SimpleVendorRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "SimpleVendorRegistry"
+      ]
+    },
+    "C:\\Users\\vivek\\lastr\\contracts\\StandaloneBookingEscrow.sol": {
+      "lastModificationDate": 1756874084819,
+      "contentHash": "ac2486d36a2354bd7c70a5104f7249c5",
+      "sourceName": "contracts/StandaloneBookingEscrow.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "StandaloneBookingEscrow"
+      ]
+    }
+  }
+}

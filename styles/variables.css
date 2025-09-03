@@ -1,0 +1,41 @@
+/* Enhanced CSS variables with glassmorphism and modern effects */
+:root {
+  --color-brand: #1b9aaa;
+  --color-on-brand: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #0b132b;
+  --color-muted: #6b7280;
+
+  --ring-offset: 3px;
+
+  /* Glassmorphism and modern surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  /* Dynamic gradient variables */
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  
+  /* Neon glow effects */
+  --neon-blue: #00f5ff;
+  --neon-purple: #bf5af2;
+  --neon-pink: #ff006e;
+  --neon-green: #39ff14;
+}
+
+.dark {
+  --color-brand: #14b8a6;
+  --color-on-brand: #081018;
+  --color-surface: #0b132b;
+  --color-text: #e5e7eb;
+  --color-muted: #94a3b8;
+
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(148, 163, 184, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+
