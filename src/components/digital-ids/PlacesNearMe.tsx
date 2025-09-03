@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 // Dynamically import Leaflet components to avoid SSR issues
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false }) as any
-const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false })
-const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false })
-const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false })
+const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false }) as any
+const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false }) as any
+const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false }) as any
 
 // Custom icons - will be created on client side
 let userIcon: any = null
