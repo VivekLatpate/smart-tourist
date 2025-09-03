@@ -18,53 +18,7 @@ import HotelBookingPage from '@/components/hotel-booking/HotelBookingPage'
 export default function HomePage() {
   const [currentPage, setCurrentPage] = useState<'home' | 'digital-ids' | 'verify-id' | 'safe-booking' | 'emergency-alerts' | 'places-near-me' | 'access-nft' | 'book-hotels'>('home')
   
-  // Initialize Vapi AI Voice Assistant Widget
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js';
-    script.async = true;
-    script.type = 'text/javascript';
-    document.head.appendChild(script);
 
-    script.onload = () => {
-      // Create the vapi-widget element after script loads
-      const widget = document.createElement('vapi-widget');
-      widget.setAttribute('public-key', 'e4ba7b6e-6e0d-4a3c-8d20-5a51123d8463');
-      widget.setAttribute('assistant-id', '8bcaf20e-6c00-490c-8285-b43909879b34');
-      widget.setAttribute('mode', 'voice');
-      widget.setAttribute('theme', 'dark');
-      widget.setAttribute('base-bg-color', '#000000');
-      widget.setAttribute('accent-color', '#14B8A6');
-      widget.setAttribute('cta-button-color', '#000000');
-      widget.setAttribute('cta-button-text-color', '#ffffff');
-      widget.setAttribute('border-radius', 'large');
-      widget.setAttribute('size', 'full');
-      widget.setAttribute('position', 'bottom-right');
-      widget.setAttribute('title', 'TALK WITH AI');
-      widget.setAttribute('start-button-text', 'Start');
-      widget.setAttribute('end-button-text', 'End Call');
-      widget.setAttribute('chat-first-message', 'Hey, How can I help you today?');
-      widget.setAttribute('chat-placeholder', 'Type your message...');
-      widget.setAttribute('voice-show-transcript', 'true');
-      widget.setAttribute('consent-required', 'true');
-      widget.setAttribute('consent-title', 'Terms and conditions');
-      widget.setAttribute('consent-content', 'By clicking "Agree," and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service.');
-      widget.setAttribute('consent-storage-key', 'vapi_widget_consent');
-      
-      document.body.appendChild(widget);
-    };
-
-    return () => {
-      // Cleanup on unmount
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-      const existingWidget = document.querySelector('vapi-widget');
-      if (existingWidget && existingWidget.parentNode) {
-        existingWidget.parentNode.removeChild(existingWidget);
-      }
-    };
-  }, []);
   
   // Memoize handlers to prevent unnecessary re-renders
   const notify = useCallback((message: string) => () => {
@@ -292,6 +246,7 @@ export default function HomePage() {
         <meta property="og:title" content="Smart Tourist Safety" />
         <meta property="og:description" content="Trustworthy, privacy-first safety tools for travelers and cities." />
         <meta property="og:type" content="website" />
+        <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
       </Head>
 
       <div className="min-h-screen relative overflow-hidden">
@@ -354,6 +309,37 @@ export default function HomePage() {
             </main>
           </div>
         </WalletContextProvider>
+        
+        {/* Vapi AI Voice Assistant Widget */}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+              <vapi-widget
+                public-key="e4ba7b6e-6e0d-4a3c-8d20-5a51123d8463"
+                assistant-id="8bcaf20e-6c00-490c-8285-b43909879b34"
+                mode="voice"
+                theme="dark"
+                base-bg-color="#000000"
+                accent-color="#14B8A6"
+                cta-button-color="#000000"
+                cta-button-text-color="#ffffff"
+                border-radius="large"
+                size="full"
+                position="bottom-right"
+                title="TALK WITH AI"
+                start-button-text="Start"
+                end-button-text="End Call"
+                chat-first-message="Hey, How can I help you today?"
+                chat-placeholder="Type your message..."
+                voice-show-transcript="true"
+                consent-required="true"
+                consent-title="Terms and conditions"
+                consent-content="By clicking 'Agree,' and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
+                consent-storage-key="vapi_widget_consent"
+              ></vapi-widget>
+            `
+          }}
+        />
       </div>
     </>
   )
